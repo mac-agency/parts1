@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>contact1</title>
+<style type="text/css">
+  .cform th {
+	font-size: 14px;
+	width: 20%; /*変なところで改行される場合はここの数字を変更します。*/
+	border-bottom: solid 1px #d6d6d6;
+	padding: 10px 0 10px 15px;
+	font-weight: normal;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.cform td {
+	font-size: 14px;
+	line-height: 150%;
+	border-bottom: solid 1px #d6d6d6;
+	padding: 10px 5px;
+}
+
+.cform {
+	width: 100%;
+	margin: auto;
+}
+
+.cform [type=submit] {
+	display: inline-block;
+	font-size: 20px;
+	padding: 10px 30px;
+	text-decoration: none;
+	background: #ff8f00;
+	color: #FFF;
+	border-bottom: solid 4px #B17C00;
+	border-radius: 3px;
+}
+
+.cform option,
+.cform textarea,
+.cform input[type=text],
+.cform input[type=email],
+.cform input[type=search],
+.cform input[type=url] {
+	width: 100%;
+}
+
+.required-srt {
+	font-size: 8pt;
+	padding: 5px;
+	background: #ce0000;
+	color: #fff;
+	border-radius: 3px;
+	margin-left: 10px;
+	vertical-align: middle;
+}
+
+@media only screen and (max-width:767px) {
+	.cform th,
+	.cform td {
+		width: 100%;
+		display: block;
+		border-top: none;
+	}
+}
+
+.submit-btn input {
+	background: #00142c;
+	width: 60%;
+	max-width: 550px;
+	min-width: 220px;
+	margin: 30px auto;
+	display: block;
+	border: 1px #00142c solid;
+	text-align: center;
+	padding: 5px;
+	color: #fff;
+	transition: all 0.4s ease;
+}
+
+.submit-btn input:hover {
+	background: #fff;
+	color: #00142c;
+}
+</style>
+</head>
+
+<body>
+  <table class="cform">
+  <tbody>
+<tr>
+<th>お名前<span class="required-srt">必須</span></th>
+<td>[mwform_text name="your-name" size="0"]</td>
+</tr>
+<tr>
+<th>フリガナ<span class="required-srt">必須</span></th>
+<td>[mwform_text name="hurigana" size="0"]</td>
+</tr>
+<tr>
+<th>法人名</th>
+<td>[mwform_text name="company-name" size="0"]</td>
+</tr>
+<tr>
+<th>メールアドレス<span class="required-srt">必須</span></th>
+<td>[mwform_email name="mail" size="0"]</td>
+</tr>
+<tr>
+<th>メールアドレス（確認）<span class="required-srt">必須</span></th>
+<td>[mwform_email name="mail-confirm" size="0"]</td>
+</tr>
+<tr>
+<th>お問い合わせ種類<span class="required-srt">必須</span></th>
+<td>[mwform_select name="contact-select" children="おまかせHACCPのお申込み,おまかせHACCPの機能について,商談依頼,その他"]</td>
+</tr>
+<tr>
+<th>お問い合わせ内容<span class="required-srt">必須</span></th>
+<td>[mwform_textarea name="contents" cols="50" rows="5"]</td>
+</tr>
+<tr>
+<th>個人情報保護方針に<span class="required-srt">必須</span></th>
+<td>[mwform_checkbox name="doui" children="同意する" separator=","]</td>
+</tr>
+</tbody>
+</table>
+<div class="submit-btn">[mwform_submitButton name="確認送信" confirm_value="確認画面へ進む" submit_value="送信する"]</div>
+<p style="text-align: center;">[mwform_backButton value="戻る"]</p>
+</body>
+</html>
